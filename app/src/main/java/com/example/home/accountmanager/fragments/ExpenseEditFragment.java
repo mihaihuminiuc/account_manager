@@ -107,12 +107,12 @@ public class ExpenseEditFragment extends Fragment implements LoaderManager.Loade
         mExtraValue = getActivity().getIntent().getLongExtra(EXTRA_EDIT_EXPENSE, -1);
         // Create a new expense
         if (mExtraValue < 1) {
-            getActivity().setTitle(R.string.add_expense);
+            getActivity().setTitle(R.string.add_expense_string);
             loadCategories();
 
             // Edit existing expense
         } else {
-            getActivity().setTitle(R.string.edit_expense);
+            getActivity().setTitle(R.string.edit_expense_string);
             loadExpenseData();
         }
     }
@@ -158,14 +158,14 @@ public class ExpenseEditFragment extends Fragment implements LoaderManager.Loade
         String etValue = mExpValueEditText.getText().toString();
         try {
             if (etValue.length() == 0) {
-                mExpValueEditText.setError(getResources().getString(R.string.error_empty_field));
+                mExpValueEditText.setError(getResources().getString(R.string.error_empty_field_string));
                 return false;
             } else if (Float.parseFloat(etValue) == 0.00f) {
-                mExpValueEditText.setError(getResources().getString(R.string.error_zero_value));
+                mExpValueEditText.setError(getResources().getString(R.string.error_zero_value_string));
                 return false;
             }
         } catch (Exception e) {
-            mExpValueEditText.setError(getResources().getString(R.string.error_incorrect_input));
+            mExpValueEditText.setError(getResources().getString(R.string.error_incorrect_input_string));
             return false;
         }
         return true;
@@ -300,7 +300,7 @@ public class ExpenseEditFragment extends Fragment implements LoaderManager.Loade
         );
 
         Toast.makeText(getActivity(),
-                getResources().getString(R.string.expense_added),
+                getResources().getString(R.string.expense_added_string),
                 Toast.LENGTH_SHORT).show();
     }
 

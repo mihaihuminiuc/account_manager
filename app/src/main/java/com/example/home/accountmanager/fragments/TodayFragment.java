@@ -32,6 +32,8 @@ import com.example.home.accountmanager.adapters.SimpleExpenseAdapter;
 import com.example.home.accountmanager.model.ExpensesContract;
 import com.example.home.accountmanager.util.Utils;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Date;
 
 public class TodayFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -56,10 +58,10 @@ public class TodayFragment extends Fragment implements LoaderManager.LoaderCallb
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_today, container, false);
 
-        mExpensesView = (ListView) rootView.findViewById(R.id.expenses_list_view);
+        mExpensesView = rootView.findViewById(R.id.expenses_list_view);
         mProgressBar = rootView.findViewById(R.id.expenses_progress_bar);
-        mTotalExpSumTextView = (TextView) rootView.findViewById(R.id.total_expense_sum_text_view);
-        mTotalExpCurrencyTextView = (TextView) rootView.findViewById(R.id.total_expense_currency_text_view);
+        mTotalExpSumTextView = rootView.findViewById(R.id.total_expense_sum_text_view);
+        mTotalExpCurrencyTextView = rootView.findViewById(R.id.total_expense_currency_text_view);
 
         mExpensesView.setEmptyView(rootView.findViewById(R.id.expenses_empty_list_view));
         mExpensesView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -184,7 +186,7 @@ public class TodayFragment extends Fragment implements LoaderManager.LoaderCallb
     }
 
     @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
+    public void onLoaderReset(@NotNull Loader<Cursor> loader) {
         switch (loader.getId()) {
             case SUM_LOADER_ID:
                 mTotalExpSumTextView.setText(Utils.formatToCurrency(0.0f));

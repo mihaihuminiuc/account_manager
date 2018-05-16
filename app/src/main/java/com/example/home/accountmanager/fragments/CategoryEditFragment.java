@@ -23,6 +23,8 @@ import android.widget.Toast;
 import com.example.home.accountmanager.R;
 import com.example.home.accountmanager.model.ExpensesContract.Categories;
 
+import org.jetbrains.annotations.NotNull;
+
 public class CategoryEditFragment extends Fragment implements LoaderManager.LoaderCallbacks<Cursor> {
     public static final String EXTRA_EDIT_CATEGORY = "EXTRA_EDIT_CATEGORY";
 
@@ -37,7 +39,8 @@ public class CategoryEditFragment extends Fragment implements LoaderManager.Load
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NotNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
         // Inflate layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_category_edit, container, false);
 
@@ -65,11 +68,11 @@ public class CategoryEditFragment extends Fragment implements LoaderManager.Load
         mExtraValue = getActivity().getIntent().getLongExtra(EXTRA_EDIT_CATEGORY, -1);
         // Create a new category
         if (mExtraValue < 1) {
-            getActivity().setTitle(R.string.add_category);
+            getActivity().setTitle(R.string.add_category_string);
 
         // Edit existing category
         } else {
-            getActivity().setTitle(R.string.edit_category);
+            getActivity().setTitle(R.string.edit_category_string);
             setCategoryData();
         }
     }
@@ -104,7 +107,7 @@ public class CategoryEditFragment extends Fragment implements LoaderManager.Load
     private boolean checkEditTextForEmptyField(EditText editText) {
         String inputText = editText.getText().toString().trim();
         if (inputText.length() == 0) {
-            editText.setError(getResources().getString(R.string.error_empty_field));
+            editText.setError(getResources().getString(R.string.error_empty_field_string));
             mCatNameEditText.selectAll();
             return false;
         } else {
@@ -135,7 +138,7 @@ public class CategoryEditFragment extends Fragment implements LoaderManager.Load
     }
 
     @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+    public void onLoadFinished(@NotNull Loader<Cursor> loader, Cursor data) {
         int categoryNameIndex = data.getColumnIndex(Categories.NAME);
         data.moveToFirst();
         String categoryName = data.getString(categoryNameIndex);
@@ -143,7 +146,7 @@ public class CategoryEditFragment extends Fragment implements LoaderManager.Load
     }
 
     @Override
-    public void onLoaderReset(Loader loader) {
+    public void onLoaderReset(@NotNull Loader loader) {
         mCatNameEditText.setText("");
     }
 
@@ -157,7 +160,7 @@ public class CategoryEditFragment extends Fragment implements LoaderManager.Load
         );
 
         Toast.makeText(getActivity(),
-                getResources().getString(R.string.category_added),
+                getResources().getString(R.string.category_added_string),
                 Toast.LENGTH_SHORT).show();
     }
 
@@ -175,7 +178,7 @@ public class CategoryEditFragment extends Fragment implements LoaderManager.Load
         );
 
         Toast.makeText(getActivity(),
-                getResources().getString(R.string.category_updated),
+                getResources().getString(R.string.category_updated_string),
                 Toast.LENGTH_SHORT).show();
     }
 }

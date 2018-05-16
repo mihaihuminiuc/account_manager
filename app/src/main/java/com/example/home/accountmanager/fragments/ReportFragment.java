@@ -61,10 +61,10 @@ public class ReportFragment extends Fragment implements LoaderManager.LoaderCall
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_report, container, false);
 
-        mExpensesListView = (ListView) rootView.findViewById(R.id.expenses_report_list_view);
+        mExpensesListView = rootView.findViewById(R.id.expenses_report_list_view);
         mProgressBar = rootView.findViewById(R.id.expenses_report_progress_bar);
-        mTotalValueTextView = (TextView) rootView.findViewById(R.id.expenses_report_total_text_view);
-        mTotalCurrencyTextView = (TextView) rootView.findViewById(R.id.expenses_report_total_currency_text_view);
+        mTotalValueTextView = rootView.findViewById(R.id.expenses_report_total_text_view);
+        mTotalCurrencyTextView = rootView.findViewById(R.id.expenses_report_total_currency_text_view);
 
         mExpensesListView.setEmptyView(rootView.findViewById(R.id.expenses_report_empty_list_view));
         mTotalValueTextView.setText(Utils.formatToCurrency(0.0f));

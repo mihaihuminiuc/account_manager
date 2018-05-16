@@ -35,17 +35,13 @@ public class SimpleExpenseAdapter extends CursorAdapter {
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         // Find fields to populate in inflated template
-        TextView tvExpenseValue = (TextView) view.findViewById(R.id.expense_value_text_view);
-        TextView tvExpenseCurrency = (TextView) view.findViewById(R.id.expense_currency_text_view);
-        TextView tvExpenseCatName = (TextView) view.findViewById(R.id.expense_category_name_text_view);
-
-        // Extract values from cursor
-        float expValue = cursor.getFloat(cursor.getColumnIndexOrThrow(ExpensesContract.Expenses.VALUE));
-        String categoryName = cursor.getString(cursor.getColumnIndexOrThrow(ExpensesContract.Categories.NAME));
+        TextView tvExpenseValue = view.findViewById(R.id.expense_value_text_view);
+        TextView tvExpenseCurrency = view.findViewById(R.id.expense_currency_text_view);
+        TextView tvExpenseCatName = view.findViewById(R.id.expense_category_name_text_view);
 
         // Populate views with extracted values
-        tvExpenseValue.setText(Utils.formatToCurrency(expValue));
-        tvExpenseCatName.setText(categoryName);
+        tvExpenseValue.setText(Utils.formatToCurrency(cursor.getFloat(cursor.getColumnIndexOrThrow(ExpensesContract.Expenses.VALUE))));
+        tvExpenseCatName.setText(cursor.getString(cursor.getColumnIndexOrThrow(ExpensesContract.Categories.NAME)));
         tvExpenseCurrency.setText(mCurrency);
     }
 }

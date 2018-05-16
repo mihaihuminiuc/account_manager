@@ -4,6 +4,6 @@
     <item
         android:id="@+id/new_expense_menu_item"
         android:icon="@drawable/ic_menu_add"
-        android:title="@string/add_expense"
+        android:title="@string/add_expense_string"
         app:showAsAction="ifRoom" />
 </menu>

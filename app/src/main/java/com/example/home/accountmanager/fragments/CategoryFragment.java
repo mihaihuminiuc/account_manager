@@ -175,7 +175,7 @@ public class CategoryFragment extends Fragment implements LoaderManager.LoaderCa
         );
 
         reloadCategoryList();
-        showStatusMessage(getResources().getString(R.string.category_deleted));
+        showStatusMessage(getResources().getString(R.string.category_deleted_string));
 
         return rowsDeleted;
     }

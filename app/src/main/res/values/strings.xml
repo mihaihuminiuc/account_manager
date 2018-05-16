@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ExpenseTracer</string>
+    <string name="app_name">AccountManager</string>
 
     <string name="nav_today">Today</string>
     <string name="nav_report">Expense reports</string>
@@ -9,24 +9,24 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
-    <string name="add_category">Add a category</string>
-    <string name="edit_category">Edit category</string>
+    <string name="add_category_string">Add a category</string>
+    <string name="edit_category_string">Edit category</string>
     <string name="delete_category">Delete category</string>
     <string name="delete_cat_dialog_msg">All associated expenses will be deleted as well. Are you sure you want to delete the category?</string>
-    <string name="category_deleted">Category deleted</string>
-    <string name="category_added">Category added</string>
-    <string name="category_updated">Category updated</string>
+    <string name="category_deleted_string">Category deleted</string>
+    <string name="category_added_string">Category added</string>
+    <string name="category_updated_string">Category updated</string>
     <string name="category_name_string">Category name</string>
 
     <string name="today_total">Today\'s total</string>
     <string name="today_expenses">Today\'s expenses</string>
 
-    <string name="add_expense">New expense</string>
-    <string name="edit_expense">Edit expense</string>
+    <string name="add_expense_string">New expense</string>
+    <string name="edit_expense_string">Edit expense</string>
     <string name="delete_expense">Delete expense</string>
     <string name="delete_exp_dialog_msg">Are you sure you want to delete the expense?</string>
     <string name="expense_deleted">Expense deleted</string>
-    <string name="expense_added">Expense added</string>
+    <string name="expense_added_string">Expense added</string>
     <string name="expense_updated">Expense updated</string>
     <string name="expense_category_name_string">Category</string>
     <plurals name="expenses_deleted_plurals_msg">
@@ -36,9 +36,9 @@
 
     <string name="delete_string">Delete</string>
     <string name="done_string">Done</string>
-    <string name="error_empty_field">Empty field</string>
-    <string name="error_zero_value">Zero value is invalid</string>
-    <string name="error_incorrect_input">Incorrect input</string>
+    <string name="error_empty_field_string">Empty field</string>
+    <string name="error_zero_value_string">Zero value is invalid</string>
+    <string name="error_incorrect_input_string">Incorrect input</string>
 
     <string name="filter_expenses">Filter</string>
     <string name="filter_option_today">By Today</string>
@@ -58,24 +58,19 @@
     <string name="total_string">Total</string>
 
     <string name="pref_currency_title">Currency</string>
-    <string name="pref_currency_default">USD</string>
+    <string name="pref_currency_default">RON</string>
+
     <string-array name="pref_currency_list_titles">
+        <item>RO Leu</item>
         <item>US Dollar</item>
         <item>Euro</item>
         <item>British Pound</item>
-        <item>Canadian Dollar</item>
-        <item>Australian Dollar</item>
-        <item>Ukrainian Hryvnia</item>
-        <item>Russian Rouble</item>
     </string-array>
     <string-array name="pref_currency_list_values">
+        <item>RON</item>
         <item>USD</item>
         <item>EUR</item>
         <item>GBP</item>
-        <item>CAD</item>
-        <item>AUD</item>
-        <item>UAH</item>
-        <item>RUB</item>
     </string-array>
 
     <!-- Predefined expense categories -->
