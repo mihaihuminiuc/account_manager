@@ -25,11 +25,11 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activities.EditCategoryActivity"
+            android:name=".activities.CategoryditActivity"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activities.EditExpenseActivity"
+            android:name=".activities.ExpenseEditActivity"
             android:screenOrientation="portrait"/>
 
         <provider

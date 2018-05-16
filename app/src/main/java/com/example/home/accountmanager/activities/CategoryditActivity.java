@@ -6,7 +6,7 @@ import android.support.v7.app.ActionBar;
 
 import com.example.home.accountmanager.fragments.CategoryEditFragment;
 
-public class EditCategoryActivity extends BaseActivity {
+public class CategoryditActivity extends BaseActivity {
     /* Important: use onCreate(Bundle savedInstanceState)
      * instead of onCreate(Bundle savedInstanceState, PersistableBundle persistentState) */
     @Override

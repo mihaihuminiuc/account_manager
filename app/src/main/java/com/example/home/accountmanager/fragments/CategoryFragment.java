@@ -26,7 +26,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.home.accountmanager.R;
-import com.example.home.accountmanager.activities.EditCategoryActivity;
+import com.example.home.accountmanager.activities.CategoryditActivity;
 import com.example.home.accountmanager.model.ExpensesContract.Categories;
 import com.example.home.accountmanager.model.ExpensesContract.Expenses;
 
@@ -217,11 +217,11 @@ public class CategoryFragment extends Fragment implements LoaderManager.LoaderCa
     }
 
     private void prepareCategoryToCreate() {
-        startActivity(new Intent(getActivity(), EditCategoryActivity.class));
+        startActivity(new Intent(getActivity(), CategoryditActivity.class));
     }
 
     private void prepareCategoryToEdit(long id) {
-        Intent intent = new Intent(getActivity(), EditCategoryActivity.class);
+        Intent intent = new Intent(getActivity(), CategoryditActivity.class);
         intent.putExtra(CategoryEditFragment.EXTRA_EDIT_CATEGORY, id);
         startActivity(intent);
     }

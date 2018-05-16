@@ -27,7 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.home.accountmanager.R;
-import com.example.home.accountmanager.activities.EditExpenseActivity;
+import com.example.home.accountmanager.activities.ExpenseEditActivity;
 import com.example.home.accountmanager.adapters.SimpleExpenseAdapter;
 import com.example.home.accountmanager.model.ExpensesContract;
 import com.example.home.accountmanager.util.Utils;
@@ -251,11 +251,11 @@ public class TodayFragment extends Fragment implements LoaderManager.LoaderCallb
     }
 
     private void prepareExpenseToCreate() {
-        startActivity(new Intent(getActivity(), EditExpenseActivity.class));
+        startActivity(new Intent(getActivity(), ExpenseEditActivity.class));
     }
 
     private void prepareExpenseToEdit(long id) {
-        Intent intent = new Intent(getActivity(), EditExpenseActivity.class);
+        Intent intent = new Intent(getActivity(), ExpenseEditActivity.class);
         intent.putExtra(ExpenseEditFragment.EXTRA_EDIT_EXPENSE, id);
         startActivity(intent);
     }
